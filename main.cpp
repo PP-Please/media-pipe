@@ -11,6 +11,8 @@ To compile, enter the build directory and run make.
 */
 int main() {
     cerr << "Attempting to open webcam." << endl;
+    
+    // Used the V4L2 Linux driver for my webcam to detect. 
     VideoCapture cap(0, cv::CAP_V4L2);
 
     /*
@@ -36,12 +38,14 @@ int main() {
 
     cerr << "Webcam opened successfully!" << endl;
 
-    Mat img;
+    Mat img, imgCanny;
 
     while (true) {
         cap.read(img);
-        
-        imshow("Image", img);
+
+        // Using the Canny edge detection algorithm. 
+        Canny(img, imgCanny, 50, 150);
+        imshow("Image", imgCanny);
         waitKey(1);
     }
 
