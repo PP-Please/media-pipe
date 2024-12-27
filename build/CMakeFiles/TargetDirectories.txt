@@ -1,0 +1,3 @@
+/home/kelvin/media-pipe/build/CMakeFiles/OpenCVWebcamApp.dir
+/home/kelvin/media-pipe/build/CMakeFiles/edit_cache.dir
+/home/kelvin/media-pipe/build/CMakeFiles/rebuild_cache.dir
