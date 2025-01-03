@@ -1,0 +1,9 @@
+# User's Build/IDE Information
+Makefile
+.vscode
+.vscode/
+
+# Compilation Files/Folders
+build
+build*
+build/
