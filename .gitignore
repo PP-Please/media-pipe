@@ -2,8 +2,13 @@
 Makefile
 .vscode
 .vscode/
+.git
+.git*
+.git/
 
 # Compilation Files/Folders
 build
 build*
 build/
+models/
+models/pose/mpi/pose_iter_160000.caffemodel
