@@ -1,0 +1,9 @@
+# User's Build Information
+Makefile
+
+# Compilation Files/Folders
+build
+build*
+build/
+models
+models*
