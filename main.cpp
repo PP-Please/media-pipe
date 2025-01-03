@@ -6,7 +6,7 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/cudaimgproc.hpp> 
 #include <iostream>
-#include <vector>
+#include <filesystem>
 
 using namespace cv;
 using namespace std;
@@ -46,8 +46,9 @@ int main() {
     cerr << "Webcam opened successfully!" << endl;
     
     // Define location of the models. We are using OpenPose's MPI model.
-    string protoFile = "/home/kelvin/libs/openpose/models/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt";
-    string weightsFile = "/home/kelvin/libs/openpose/models/pose/mpi/pose_iter_160000.caffemodel";
+    string currPath = filesystem::current_path().string();
+    string protoFile = currPath + "/../models/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt";
+    string weightsFile = currPath + "/../models/pose/mpi/pose_iter_160000.caffemodel";
 
     Net net = readNetFromCaffe(protoFile, weightsFile);
 
