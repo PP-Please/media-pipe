@@ -29,7 +29,7 @@ A UNSW research project that uses OpenCV and a body detection model to determine
         -DWITH_OPENGL=ON \
         -DBUILD_EXAMPLES=ON \
         -DOPENCV_GENERATE_PKGCONFIG=ON \
-        -DOPENCV_EXTRA_MODULES_PATH=/home/kelvin/libs/opencv_contrib/modules \
+        -DOPENCV_EXTRA_MODULES_PATH=[path]/modules \
         ..
     ```
     3. Compile OpenCV with the terminal commands `make -j$(nproc)` and then `sudo make install`.
