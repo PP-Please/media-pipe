@@ -57,8 +57,8 @@ int main() {
     }
 
     // Enable GPU acceleration
-    net.setPreferableBackend(DNN_BACKEND_CUDA);
-    net.setPreferableTarget(DNN_TARGET_CUDA_FP16);
+    // net.setPreferableBackend(DNN_BACKEND_CUDA);
+    // net.setPreferableTarget(DNN_TARGET_CUDA_FP16);
 
 
     Mat frame;
