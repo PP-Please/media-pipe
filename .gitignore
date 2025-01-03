@@ -7,5 +7,3 @@ Makefile
 build
 build*
 build/
-models
-models*
