@@ -1,9 +1,6 @@
 # Media-Pipe
 A UNSW research project that uses OpenCV and a body detection model to determine ...
 
-## Credits
-[OpenPose Body Detection Model](https://github.com/CMU-Perceptual-Computing-Lab/openpose/tree/master)
-
 ## Prerequisites
 * OpenCV 4.x, with extra modules. You need to build OpenCV to include these extra modules. You can find the method [here.](https://github.com/opencv/opencv_contrib)
     <details>
@@ -35,7 +32,6 @@ A UNSW research project that uses OpenCV and a body detection model to determine
     3. Compile OpenCV with the terminal commands `make -j$(nproc)` and then `sudo make install`.
     </details>
 
-* OpenPose. You can find the prerequisties required for OpenPose [here.](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/installation/1_prerequisites.md)
 * CMake
 
 ## Installation
@@ -54,9 +50,19 @@ For Ubuntu or WSL:
     cmake ..
     ```
 
-3. Install the caffemodel required for this program. The .zip can be installed from [here.](https://drive.google.com/file/d/1QCSxJZpnWvM00hx49CJ2zky7PWGzpcEh/edit) Find the `pose_iter_160000.caffemodel` file in the path `pose/mpi`, and drag it to the corresponding path inside the `media-pipe` folder `models/pose/mpi/pose_iter_160000.caffemodel`.
+3. Install the `.caffemodel` required for this program. The .zip can be installed from [here.](https://drive.google.com/file/d/1QCSxJZpnWvM00hx49CJ2zky7PWGzpcEh/edit) Find the `pose_iter_160000.caffemodel` file in the path `pose/mpi`, and drag it to the corresponding path inside the `media-pipe` folder `models/pose/mpi/pose_iter_160000.caffemodel`.
 
 4. Run `make` to build the program.
 
 
 You can run the program using the terminal command `./OpenCVWebcamApp`.
+
+## Troubleshooting
+* `can't open camera by index`: This suggests that the webcam is not accessible by the program, either because the webcam is not connected or there are insufficient permissions. Run `ls -al /dev/video*`.
+    * If the permissions of `/dev/video0` is `crw-------`, the webcam has insufficient permissions and the command `sudo chmod 666 /dev/video0` should be run to temporarily modify the permissions.
+    * If the command returns `No such file or directory`, the webcam may not be connected. If on WSL, you may need to follow [this](https://www.youtube.com/watch?v=t_YnACEPmrM) video guide to enable webcam drivers.
+
+## Credits
+[OpenPose Body Detection Model](https://github.com/CMU-Perceptual-Computing-Lab/openpose/tree/master)
+
+[GeeksForGeeks Pose Estimation using OpenCV Python](https://www.geeksforgeeks.org/python-opencv-pose-estimation/)
