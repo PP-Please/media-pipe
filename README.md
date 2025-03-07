@@ -1,5 +1,5 @@
 # Media-Pipe
-A UNSW research project that uses OpenCV and a body detection model to determine ...
+A submission for a UNSW research project that uses OpenCV and a body detection model to determine the position of a user in motion. 
 
 ## Prerequisites
 * OpenCV 4.x, with extra modules. You need to build OpenCV to include these extra modules. You can find the method [here.](https://github.com/opencv/opencv_contrib)
